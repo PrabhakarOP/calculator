@@ -1,0 +1,27 @@
+body{
+    /* background-color: #e8e8e8; */
+    background-image: url(../asset/dark-background-image.jpg);
+    background-position: center,center;
+    background-size: contain;
+}
+
+.calculator-container{
+    background-color: #22252e;
+    box-shadow:  0px 0px 2px 3px rgb(83, 83, 83);
+}
+
+#toggle,.keys-container{
+    background-color: #2a2c38;
+}
+
+#moon{
+    color: white;
+}
+
+#sun{
+    color: #777a80;
+}
+
+button{
+    background-color: #282b34;
+}
