@@ -22,6 +22,10 @@ body{
     color: #777a80;
 }
 
+#workspace{
+    color: white;
+}
+
 button{
     background-color: #282b34;
 }
