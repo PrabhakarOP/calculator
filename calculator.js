@@ -14,6 +14,7 @@ buttons.forEach((b)=>{
             case "minus" : workspace.innerText= addThisOperatorTo('-',workspace.innerText);break;
             case "plus" : workspace.innerText= addThisOperatorTo('+',workspace.innerText);break;
             case "equal" :  workspace.innerText=total(workspace.innerText);break;
+            case 'decimal' : addDecimal(workspace.innerText);break;
             default : workspace.innerText+=b.innerText;
         }
         
@@ -36,6 +37,12 @@ buttons.forEach((b)=>{
         
     }
 
+    function addDecimal(str){
+        if(str.slice(-1)==".")
+            return str;
+        return workspace.innerText=str+'.';
+    }
+
     function isOperator(op){
         if(op == '+' || op == '-' || op == 'x' || op == '/'){
             return true;
@@ -51,10 +58,10 @@ buttons.forEach((b)=>{
             exp=exp.slice(1);
         }
 
-        while(exp.charAt(0)=='0'){
+        while(exp.charAt(0)=='0'){      //removing leading zeros
             exp=exp.slice(1);
         }
 
-        exp=exp.replace('x','*');
+        exp=exp.replaceAll('x','*');
         return eval(exp);
     }
