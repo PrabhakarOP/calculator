@@ -52,7 +52,7 @@ buttons.forEach((b)=>{
 
     function total(exp){
         if(isOperator(exp.slice(-1)))
-            return exp;
+            exp=exp.slice(0,-1);
 
         if(exp.charAt(0) != '-' && isOperator(exp.charAt(0))){        //checks if there is a leading operator other than minus
             exp=exp.slice(1);
