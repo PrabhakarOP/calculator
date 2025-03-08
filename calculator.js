@@ -46,6 +46,15 @@ buttons.forEach((b)=>{
     function total(exp){
         if(isOperator(exp.slice(-1)))
             return exp;
+
+        if(exp.charAt(0) != '-' && isOperator(exp.charAt(0))){        //checks if there is a leading operator other than minus
+            exp=exp.slice(1);
+        }
+
+        while(exp.charAt(0)=='0'){
+            exp=exp.slice(1);
+        }
+
         exp=exp.replace('x','*');
         return eval(exp);
     }
